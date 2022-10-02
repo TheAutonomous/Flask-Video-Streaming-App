@@ -1,4 +1,3 @@
-from flask import render_template
 from Packages.FlaskBase import FlaskInitialize
 import os, socket
 

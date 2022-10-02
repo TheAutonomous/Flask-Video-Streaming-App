@@ -7,11 +7,10 @@ class FlaskInitialize():
         
         @FlaskAPP.route("/", methods=["GET"])
         def index():
-            print(request.args.get("t"))
             return FlaskAPP.send_static_file('index.html')
         
         @FlaskAPP.route("/camera", methods=["GET"])
-        def get_camera():
+        def cam():
             return WebCamAPI.CurrentFrame
         
         WebCamAPI.RunLoop()

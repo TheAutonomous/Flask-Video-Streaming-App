@@ -1,1 +1,13 @@
-<h1>hi lol</h1>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+
+<script>
+    document.write("<image id='CameraFeed' src=''></image>")
+    CFeed = document.getElementById("CameraFeed")
+    setInterval(function () {
+        $.get("/camera", function (status, data) {
+            document.getElementById("CameraFeed").src = "data:image/jpeg;base64:" + data
+        })
+    }, 30);
+</script>
